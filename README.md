@@ -174,6 +174,12 @@ By default this will run the server on port 8000.
 
 The script runs a modified version of Python's built-in 'http.server' with the same syntax as running ```python -m http.server```.  The only modification is to default the directory for the server to 'build' and to look for files with '.html' and '.htm' extensions when given an extension-less URL.  The [Python documentation](https://docs.python.org/3/library/http.server.html) emphasizes that this server is only to be used for testing and not for any kind of production work, so please don't use it for that purpose.
 
+## Publishing to GitHub Pages
+
+This project also includes a GitHub Actions workflow to automatically build the website and commit the result to a branch named "gh-pages".  This branch can then be used to serve your website through GitHub pages.  (See [Quickstart Guide](https://docs.github.com/en/pages/quickstart) for isntructions on setting this up.)
+
+If you want to enable this in your project just copy the ```.github``` directory to your project and modify ```.github/actions/github-pages/Dockerfile``` to use your name as the maintainer instead of mine.
+
 ## Vivian Smith-Smythe-Smith
 
 Lastly, if you're wondering how to pronounce "Metalsmythe", it's "smythe" with a long "I" sound, as in:
