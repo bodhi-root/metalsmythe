@@ -20,6 +20,8 @@ The site is an extension of the [Metalsmith bare-bones starter](https://github.c
 
 The rest is left to your imagination.
 
-<a class="gitter-invite" href="https://gitter.im/metalsmith/community">
-<p>Join the Metalsmith community at <img src="/assets/images/gitter.png" alt="gitter" /> to discuss all-things Metalsmith.</p>
-</a>
+<span>
+  <a class="gitter-invite" href="https://gitter.im/metalsmith/community">
+    <p>Join the Metalsmith community at <img src="/assets/images/gitter.png" alt="gitter" /> to discuss all-things Metalsmith.</p>
+  </a>
+</span>
