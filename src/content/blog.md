@@ -1,5 +1,5 @@
 ---
-layout: blog.njk
+layout: blog.html
 bodyClass: "blog"
 
 seo:

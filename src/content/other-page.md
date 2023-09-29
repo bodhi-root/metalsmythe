@@ -1,5 +1,5 @@
 ---
-layout: simple.njk
+layout: simple.html
 bodyClass: "other-page"
 
 seo:

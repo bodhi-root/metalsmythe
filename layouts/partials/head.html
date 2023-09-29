@@ -11,8 +11,6 @@
 <meta httpEquiv="cleartype" content="on"/>
 <meta httpEquiv="Accept-CH" content="DPR, Viewport-Width, Width"/>
 
-<title>{{ seo.title }}</title>
-<meta name="description" content="{{ seo.description }}"/>
 <meta name="author" content="Werner Glinka"/>
 <meta name="generator" content="metalsmith"/>
 
@@ -32,15 +30,21 @@
 <meta name="twitter:title" content="{{ site.title }}"/>
 <meta name="twitter:description" content="{{ site.description }}"/>
 <meta name="twitter:creator" content="{{ site.author }}"/>
-<meta name="twitter:image" content="{{ seo.socialImage }}"/>
+
 <meta property="og:locale" content="en_US"/>
 <meta property="og:type" content="article"/>
 <meta property="og:title" content="{{ site.title }}"/>
 <meta property="og:description" content="{{ site.description }}"/>
 <meta property="og:url" content="{{ site.siteURL }}"/>
 <meta property="og:site_name" content="{{ site.title }}"/>
-<meta property="og:image" content="{{ seo.socialImage }}"/>
 <meta property="og:updated_time" content=""}/>
+
+{% if seo is defined %}
+<title>{{ seo.title }}</title>
+<meta name="description" content="{{ seo.description }}"/>
+<meta name="twitter:image" content="{{ seo.socialImage }}"/>
+<meta property="og:image" content="{{ seo.socialImage }}"/>
+{% endif %}
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
