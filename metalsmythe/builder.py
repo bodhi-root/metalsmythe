@@ -6,6 +6,7 @@ import glob
 import json
 from dotmap import DotMap
 from .utils import GlobPattern
+from .html import prefix_links
 
 
 def load_file(path, base_dir=None, frontmatter=True):
@@ -236,3 +237,18 @@ class Builder(object):
             self.metadata["collections"] = {}
 
         self.metadata["collections"][name] = files
+
+    def prefix_links(self, prefix,
+                     selectors=["a", "link", "script", "img", "video", "audio", "source"],
+                     file_extensions=[".html", ".htm"]):
+        """Rewrites links in the given HTML text, prefixing any link that begins with '/' with the given
+        prefix.  This is intended to work similarly to the Metalsmith prefix plugin:
+
+          https://github.com/rosszurowski/metalsmith-prefix
+
+        """
+        for file in self.files:
+            path = file["path"]
+            for file_ext in file_extensions:
+                if path.endswith(file_ext):
+                    file["contents"] = prefix_links(file["contents"], prefix, selectors)

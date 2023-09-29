@@ -3,7 +3,18 @@ from jinja2 import Environment, FileSystemLoader
 import re
 from metalsmythe.builder import Builder, load_json, copy_directory
 from metalsmythe.utils import format_date
+import argparse
 
+PREFIX = ""
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--prefix", default="",
+                        help="Prefix for links beginning with '/'")
+    args = parser.parse_args()
+    PREFIX = args.prefix
+
+print(f"PREFIX = {PREFIX}")
 
 jinja_env = Environment(
     loader=FileSystemLoader("layouts"),
@@ -38,6 +49,9 @@ builder.create_collection("blog", "blog/*.md", limit=10, sort_key=lambda x: x["d
 #builder.remove_spaces()
 builder.markdown_to_html()
 builder.apply_layouts(jinja_env, default_layout="simple.html")
+
+if PREFIX != "":
+    builder.prefix_links(PREFIX)
 
 builder.write("build", clean=True)
 copy_directory("src/assets", "build/assets")

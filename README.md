@@ -1,5 +1,9 @@
 # Metalsmythe
 
+[Demo Site](https://bodhi-root.github.io/metalsmythe/)
+
+TODO: Fix links in site
+
 ## Overview
 
 Metalsmythe is a simple Python package that can be used to build static websites from Markdown files.  It is based on the ["Metalsmith" package](https://metalsmith.io) for Node.js.  If you like Metalsmith and don't mind working with Node.js, npm, and JavaScript, you should probably just stick with that.  On the other hand, if you hate working with JavaScript, get frustrated looking up documentation for all the Metalsmith plugins, and would rather have a few Python scripts that are easier to read and modify for your own purposes, you just might find this useful.  I developed this package for a website I had built using Metalsmith that published my guitar tabs collection on GitHub Pages.  Even though it doesn't have near as much functionality or support as Metalsmith, I think I like it better for this simple purpose.  It also lets me test the site without having to install Node.js, npm, and all that weird JavaScript stuff on my computer.
@@ -178,7 +182,13 @@ The script runs a modified version of Python's built-in 'http.server' with the s
 
 This project also includes a GitHub Actions workflow to automatically build the website and commit the result to a branch named "gh-pages".  This branch can then be used to serve your website through GitHub pages.  (See [Quickstart Guide](https://docs.github.com/en/pages/quickstart) for isntructions on setting this up.)
 
-If you want to enable this in your project just copy the ```.github``` directory to your project and modify ```.github/actions/github-pages/Dockerfile``` to use your name as the maintainer instead of mine.
+If you want to enable this in your project, you will need to:
+
+1. Copy the ```.github``` directory to your project and modify ```.github/actions/github-pages/Dockerfile``` to use your name as the maintainer instead of mine.
+2. Create an empty branch named in your project named "gh-pages"
+3. Setup your project to serve GitHub pages from this branch.
+4. Make sure that your Workflow has permissions to write to your repo when run.  (Default workflow permissions are managed in project settings under "Code and Automation > Actions > Workflow Permissions".)
+5. Modify the line in ```.github/workflows/build-and-deploy.yml``` that says ```python build.py --prefix /metalsmythe``` to use the prefix for your website.
 
 ## Vivian Smith-Smythe-Smith
 

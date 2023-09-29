@@ -31,7 +31,7 @@ jobs:
         pip install -r requirements.txt
       
     - name: Build
-      run: python build.py
+      run: python build.py --prefix /metalsmythe
         
     - name: Save Build Artifact
       uses: actions/upload-artifact@v3
