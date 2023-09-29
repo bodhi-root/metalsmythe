@@ -35,8 +35,11 @@ def prefix_links(html, prefix, selectors=["a", "link", "script", "img", "video",
     if "video" in selectors:
         _prefix_attrs("video", "src")
     if "audio" in selectors:
-        _prefix_attrs("audio", "")
+        _prefix_attrs("audio", "src")
     if "source" in selectors:
-        _prefix_attrs("source", "")
+        _prefix_attrs("source", "src")
 
     return str(soup)
+
+#html = '<div><a href="/link.html"><img src="/img.jpeg"/></a></div>'
+#prefix_links(html, "metalsmythe")

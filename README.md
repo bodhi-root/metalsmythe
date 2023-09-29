@@ -2,8 +2,6 @@
 
 [Demo Site](https://bodhi-root.github.io/metalsmythe/)
 
-TODO: Fix links in site
-
 ## Overview
 
 Metalsmythe is a simple Python package that can be used to build static websites from Markdown files.  It is based on the ["Metalsmith" package](https://metalsmith.io) for Node.js.  If you like Metalsmith and don't mind working with Node.js, npm, and JavaScript, you should probably just stick with that.  On the other hand, if you hate working with JavaScript, get frustrated looking up documentation for all the Metalsmith plugins, and would rather have a few Python scripts that are easier to read and modify for your own purposes, you just might find this useful.  I developed this package for a website I had built using Metalsmith that published my guitar tabs collection on GitHub Pages.  Even though it doesn't have near as much functionality or support as Metalsmith, I think I like it better for this simple purpose.  It also lets me test the site without having to install Node.js, npm, and all that weird JavaScript stuff on my computer.
